@@ -1,0 +1,25 @@
+h1 {
+    text-align: center;
+    color: black;
+  }
+  
+  button{
+    text-align: right;
+    max-width:250px;
+    min-width: fit-content;
+    color: black;
+  } 
+  .buttons{
+    display: flex;
+    justify-content: end;
+  }
+  body{
+    background-color: lavender;
+}
+button {
+    background-color: yellow;
+    transition: .3s ease all;
+}
+.announcements-border {
+    text-align: center;
+}

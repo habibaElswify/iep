@@ -1,0 +1,22 @@
+.teacherStudent {
+    display: flex;
+    justify-content: space-between;
+    background-color: lavender;
+    align-items: center;
+}
+body {
+    background-color: lavender;
+    
+}
+button {
+    
+    background-color: yellow;
+    
+}
+.container{
+    text-align: center;
+    margin: 40px;
+}
+h2{
+    margin: 25px;
+}

@@ -1,0 +1,30 @@
+.teacherStudent {
+    display: flex;
+    justify-content: space-between;
+    background-color: lavender;
+    align-items: center;
+}
+.logIn {
+    text-align: center;
+}
+.form {
+    text-align: center;
+}
+.forgotPass {
+    text-align: center;
+}
+.logoTopRight {
+    text-align: center;
+}
+body {
+    background-color: lavender;
+    height: 100%;
+    position: relative;
+}
+button {
+    background-color: yellow;
+    
+}
+.enter {
+    text-align: center;
+}

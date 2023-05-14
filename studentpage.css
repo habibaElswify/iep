@@ -1,0 +1,24 @@
+.teacherStudent {
+    display: flex;
+    justify-content: space-between;
+    background-color: lavender;
+    align-items: center;
+}
+
+button {
+    background-color: yellow;
+    
+}
+
+.rightSide {
+    text-align: end;
+}
+body{
+    text-align: left;
+}
+div{
+    text-align: center;
+}
+button {
+    background-color: yellow;
+}

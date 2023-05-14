@@ -1,0 +1,24 @@
+.teacherStudent {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    background-color: lavender;
+
+}
+   
+.AnnNotifs {
+    text-align: center;
+}
+button {
+    background-color: yellow;
+    transition: .3s ease all;
+}
+body {
+    align-items: center;
+    background-color: lavender;
+    height: 100%;
+    position: relative;
+}
+.createAnn {
+    text-align: end;
+}

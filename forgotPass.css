@@ -1,0 +1,21 @@
+.teacherStudent {
+    display: flex;
+    justify-content: space-between;
+    background-color: lavender;
+    align-items: center;
+}
+h1 {
+    text-align: center;
+}
+  form{
+    text-align: center;
+}
+body {
+    background-color: lavender;
+    height: 100%;
+    position: relative;
+}
+button {
+    background-color: yellow;
+    transition: .3s ease all;
+}
