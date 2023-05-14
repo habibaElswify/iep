@@ -1,0 +1,117 @@
+// this code has javascript and html together
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>FAQ</title>
+  <link rel="stylesheet" href="FAQ.css">
+  <style>
+    .popup-tab {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      z-index: 9999;
+      display: none;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var form = document.getElementById('Email-form');
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        showPopup();
+      });
+    });
+
+    function showPopup() {
+      var popupTab = document.createElement('div');
+      popupTab.classList.add('popup-tab');
+
+      var message = document.createElement('p');
+      message.textContent = 'Submit requested. The file will be processed.';
+
+      popupTab.appendChild(message);
+      document.body.appendChild(popupTab);
+
+      popupTab.style.display = 'block';
+
+      setTimeout(function () {
+        document.body.removeChild(popupTab);
+        document.getElementById('Email-form').submit();
+      }, 2000);
+    }
+  </script>
+</head>
+
+<body>
+  <div class="FAQ-border" style="border: 3px solid black">
+    <h1>FAQ</h1>
+    <h1>Islamic Education Program</h1>
+  </div>
+  <div class="FAQ1-border" style="border: 3px solid black">
+    <h3>Q:&nbsp;&nbsp;&nbsp; What is Islamic Education Program?</h3>
+    <h3>A:&nbsp;&nbsp;&nbsp; Islamic Education Program is a website that simplifies the daily tasks of a islamic teacher while serving as a useful tool for &nbsp;&nbsp;students! 
+        &nbsp;With this website teachers can create announcements, check attendance and assign homework. 
+        &nbsp;Students can check the &nbsp;announcements, their attendance and homework while updating their todo list.</h3>
+  </div>
+  <div class="FAQ2-border" style="border: 3px solid black">
+    <h3>Q:&nbsp;&nbsp;&nbsp; Why is this important?</h3>
+    <h3>A:&nbsp;&nbsp;&nbsp; This is important because it makes a tentative task easier. 
+        Currently MAPS-Redmond manually logs their students attendance on &nbsp;a sheet of paper. 
+        Additionally they verbally assign studnets their homework. 
+        This website was created to organize and simplify a &nbsp;teachers tasks, while granting both the teachers and students access.</h3>
+  </div>
+  <div class="FAQ-border" style="border: 3px solid black">
+    <h2>Questions, Comments, Concerns?</h2>
+    <h4>Feel free to email us!</h4>
+    <div class="container">
+      <div class="form-container">
+        <h2>Submit Request</h2>
+
+        <form id="Email-form">
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="subject" required><br>
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="1" required></textarea><br>
+
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+
+
+// the code below is css
+
+
+h1{
+    text-align: center;
+}
+.FAQ-border{
+    margin: 0.44px;
+}
+.FAQ1-border{
+    margin: 0.39px;
+}
+.FAQ2-border{
+    margin: 0.4px;
+}
+h2{
+    text-align: center;
+}
+h4{
+    text-align: center;
+}
+form{
+    text-align: center;
+}

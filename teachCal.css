@@ -1,0 +1,49 @@
+.teacherStudent {
+    display: flex;
+    justify-content: space-between;
+    background-color: lavender;
+    align-items: center;
+}
+body {
+    background-color: lavender;
+    
+}
+button {
+    
+    background-color: yellow;
+    
+}
+.reserved {
+    background-color: darkgrey;
+    color: white;
+}
+h2{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(87, 169, 87);
+}
+
+table{
+    background-color: aliceblue;
+    align:center;
+}
+td:hover{
+    background-color: #009688;
+    color: #fff !important;
+    font-weight: 700;
+}
+.back {
+    height: 100%;
+   
+  }
+  
+  .back input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(73, 114, 133, .6);
+    color: #dfebed;
+    font-size: 1.4em;
+    font-weight: 300;
+    padding: 30px 40px;
+    width: 100%;
+  }

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IEP Attendance</title>
+    <link rel="stylesheet" href="attendance.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="attendance.js"></script>
+</head>
+<body>
+    <div class = "teacherStudent">
+        <h1 class = "leftSide">
+            <button class = "image1" onclick = "window.location.href='homePage.html';">
+                <img src = "https://img.freepik.com/premium-vector/al-quran-logo-icon-vector_443394-231.jpg?w=2000" alt = "quran" width = "50" height = "50">
+            </button>
+             
+                I E P
+               
+            </h1>
+            
+         <div class = "rightSide">
+            <button class = "About" onclick = "window.location.href='aboutUs.html';">
+                <h2>
+                    About Us 
+                </h2>
+                   
+               
+                    
+                </button>
+                
+                <button class = "FRQ" onclick = "window.location.href='FAQ.html';"> 
+                  <h2>
+                    FAQ Page 
+                  </h2> 
+                    
+                   
+                </button>
+         </div>
+    </div>
+    
+    <h1>IEP Attendance</h1>
+    <h4>Enroll a new student: <input id="new-student" type="text" name="name" placeholder="Student's Name"> <button id="enroll-button" type="button">Enroll</button></h4>
+
+    <table >
+        <thead>
+            <tr>
+                <th class="name-col">Student Name's</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th class="missed">Days Missed</th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr class="student">
+                <td class="name-col">Mumtaz sheikhaden</td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="missed-col">0</td>
+            </tr>
+            <tr class="student">
+                <td class="name-col">Hawraa al hasnawi</td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="missed-col">0</td>
+            </tr>
+            <tr class="student">
+                <td class="name-col">Habiba</td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="missed-col">0</td>
+            </tr>
+            <tr class="student">
+                <td class="name-col">Edna</td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="missed-col">0</td>
+            </tr>
+        </tbody>
+    </table>
+    </body>
+</html>

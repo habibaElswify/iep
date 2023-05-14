@@ -1,0 +1,100 @@
+body{
+    background-color: lavender;
+}
+.welcome {
+    color: rgb(155, 87, 175);
+    text-align: center;
+    font-size: 35px;
+    font-family:'Courier New', Courier, monospace;
+}
+h1{
+    .logo {
+        background-color: yellow;
+        position: absolute;
+           border: none;
+           height: 36px;
+        } 
+}
+
+
+.A{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logotitle{
+    display:flex;
+    flex-wrap: nowrap;
+}
+.about-frq{
+    display:flex;
+    flex-wrap: nowrap;
+}
+
+.login-create{
+    display: flex;
+
+}
+.about-us-button{
+    float:right;
+    background-color: yellow;
+    text-align:center;
+    border:2px solid black;
+    height:50px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px gray;
+    cursor: pointer;
+}
+.about-us-button:hover{
+    background-color: gray;
+    color:white;
+}
+.frq-button{
+    float: right;
+    background-color: yellow;
+    text-align:left;
+    border:2px solid black;
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px gray;
+    cursor: pointer;
+}
+
+.frq-button:hover{
+    background-color: gray;
+    color:white;
+}
+
+.login-button{
+float:left;
+position: relative;
+left:45%;
+background-color:yellow;
+text-align: left;
+border:2px solid black;
+height: 50px;
+border-radius: 10px;
+box-shadow: 10px 10px 10px gray;
+cursor: pointer;
+ } 
+
+ .login-button:hover{
+    background-color: gray;
+    color:white;
+}  
+.create-button{
+    float:left;
+    position: relative;
+    left:45%;
+    background-color: yellow;
+    text-align: left;
+    border:2px solid black;
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px gray;
+    cursor: pointer;
+}
+.create-button:hover{
+   background-color: gray;
+   color:white;
+}

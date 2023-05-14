@@ -1,0 +1,45 @@
+.teacherStudent {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    background-color: lavender;
+    
+}
+body {
+    background-color: lavender;
+   
+}
+button {
+    
+    background-color: yellow;
+    
+}
+
+th {
+    background-color: #45bbc6;
+    color: #fff;
+    padding: 0.5em 1em;
+}
+
+td {
+    border-top: 1px solid #eee;
+    padding: 0.5em 1em;
+}
+
+input {
+    cursor: pointer;
+}
+
+th.missed {
+    background-color: hsl(0, 93%, 71%);
+}
+
+td.missed-col {
+    background-color: #45bbc6;
+    color: white;
+    text-align: center;
+}
+
+.name-col {
+    text-align: left;
+}

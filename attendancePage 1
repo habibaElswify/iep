@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IEP Attendance</title>
+    <link rel="stylesheet" href="Attendance.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="Attendance.js"></script>
+</head>
+<body>
+    <h1>IEP Attendance</h1>
+    <h4>Enroll a new student: <input id="new-student" type="text" name="name" placeholder="Student's Name"> <button id="enroll-button" type="button">Enroll</button></h4>
+
+    <table>
+        <thead>
+            <tr>
+                <th class="name-col">Student Name's</th>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th class="missed">Days Missed</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="student">
+                <td class="name-col">Mumtaz sheikhaden</td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="missed-col">0</td>
+            </tr>
+            <tr class="student">
+                <td class="name-col">Hawraa al hasnawi</td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="missed-col">0</td>
+            </tr>
+            <tr class="student">
+                <td class="name-col">Habiba</td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="missed-col">0</td>
+            </tr>
+            <tr class="student">
+                <td class="name-col">Edna</td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="attend-col"><input type="checkbox"></td>
+                <td class="missed-col">0</td>
+            </tr>
+        </tbody>
+    </table>
+    </body>
+</html>
+
+
+// Code below is CSS
+
+body {
+    line-height: 0.9;
+    margin: 210px;
+}
+
+th {
+    background-color: #45bbc6;
+    color: #fff;
+    padding: 0.5em 1em;
+}
+
+td {
+    border-top: 1px solid #eee;
+    padding: 0.5em 1em;
+}
+
+input {
+    cursor: pointer;
+}
+
+th.missed {
+    background-color: hsl(0, 93%, 71%);
+}
+
+td.missed-col {
+    background-color: #45bbc6;
+    color: white;
+    text-align: center;
+}
+
+.name-col {
+    text-align: left;
+}
+
+
+// Code below is JAVASCRIPT
+
+
+(function() {
+    if (!localStorage.attendance) {
+      console.log('Creating attendance records...');
+  
+      function getRandom() {
+        return Math.random() >= 0.5;
+      }
+  
+      var nameColumns = $('.name-col'),
+        attendance = {};
+  
+      nameColumns.each(function() {
+        var name = $(this).text();
+        attendance[name] = [];
+  
+        for (var i = 0; i <= 11; i++) {
+          attendance[name].push(getRandom());
+        }
+      });
+  
+      localStorage.attendance = JSON.stringify(attendance);
+    }
+  })();
+  
+  $(function() {
+    var attendance = JSON.parse(localStorage.attendance),
+      $allMissed = $('.missed-col'),
+      $allCheckboxes = $('input[type="checkbox"]');
+  
+    function countMissing() {
+      $allMissed.each(function() {
+        var studentRow = $(this).closest('tr'),
+          dayChecks = studentRow.find('input[type="checkbox"]'),
+          numMissed = dayChecks.filter(':not(:checked)').length;
+  
+        $(this).text(numMissed);
+      });
+    }
+  
+    function addNewAttendanceRow(studentName) {
+      var newAttendanceRow = $('<tr class="student"></tr>');
+      newAttendanceRow.append('<td class="name-col">' + studentName + '</td>');
+  
+      for (var i = 0; i < 7; i++) {
+        newAttendanceRow.append('<td class="attend-col"><input type="checkbox"></td>');
+      }
+  
+      newAttendanceRow.append('<td class="missed-col">0</td>');
+  
+      $('tbody').append(newAttendanceRow);
+      $allMissed = $('.missed-col');
+      $allCheckboxes = $('input[type="checkbox"]');
+      $allCheckboxes.on('click', function() {
+        countMissing();
+        updateAttendance();
+      });
+    }
+  
+    $('#enroll-button').on('click', function() {
+      var studentName = $('#new-student').val();
+      if (studentName.trim() !== '') {
+        addNewAttendanceRow(studentName);
+        $('#new-student').val('');
+      }
+    });
+  
+    function updateAttendance() {
+      var newAttendance = {};
+  
+      $('.student').each(function() {
+        var name = $(this).find('.name-col').text(),
+          dayChecks = $(this).find('.attend-col input[type="checkbox"]'),
+          missedCol = $(this).find('.missed-col');
+  
+        newAttendance[name] = [];
+  
+        dayChecks.each(function() {
+          newAttendance[name].push($(this).prop('checked'));
+        });
+  
+        var numMissed = dayChecks.filter(':not(:checked)').length;
+        missedCol.text(numMissed);
+      });
+  
+      localStorage.attendance = JSON.stringify(newAttendance);
+    }
+  
+    $.each(attendance, function(name, days) {
+      var studentRow = $('tr:has(.name-col:contains("' + name + '"))'),
+        dayChecks = studentRow.find('.attend-col input[type="checkbox"]');
+  
+      dayChecks.each(function(i) {
+        $(this).prop('checked', days[i]);
+      });
+    });
+  
+    $allCheckboxes.on('click', function() {
+      countMissing();
+      updateAttendance();
+    });
+  
+    countMissing();
+  });

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Create Account</title>
+    <link rel="stylesheet" type="text/css" href="teacherCreateAcc.css">
+    
+  </head>
+  <body>
+    <div class = "teacherStudent">
+        <h1 class = "leftSide">
+            <button class = "image1" onclick = "window.location.href='homePage.html';">
+                <img src = "https://img.freepik.com/premium-vector/al-quran-logo-icon-vector_443394-231.jpg?w=2000" alt = "quran" width = "50" height = "50">
+            </button>
+             
+                I E P
+               
+            </h1>
+            
+         <div class = "rightSide">
+            <button class = "About" onclick = "window.location.href='aboutUs.html';">
+                <h2>
+                    About Us 
+                </h2>
+                   
+               
+                    
+                </button>
+                
+                <button class = "FRQ" onclick = "window.location.href='FAQ.html';"> 
+                  <h2>
+                    FAQ Page 
+                  </h2> 
+                    
+                   
+                </button>
+         </div>
+    </div>
+    <div class="container">
+        <form>
+          <h2>Create Teacher Account</h2>
+          <div class="form-group">
+            <input type="text" class="form__input" autofocus placeholder="First Name">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form__input" autofocus placeholder="Last Name">
+            <div class = "form__input-error-message"></div>
+          </div>
+          
+          
+          <div class="form-group">
+            <input type="email" class="form__input" autofocus placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="tel" class="form__input" autofocus placeholder="Phone Number">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form__input" autofocus placeholder="Username">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form__input" autofocus placeholder="Password">
+          </div>
+          <div class="form-group">
+            
+          <input type="password" autofocus placeholder=" Confirm Password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+          <div class = "submit">
+            <a href="login.html">
+            <button onclick = "window.location.href='login.html';">
+                Continue
+             </button></a>
+          <p class = "form__text">
+             <a href = "#" class = "form__link" id = "linkLogin">Already have an account? Sign in </a>
+            </p>
+        </div>
+        </div>
+
+        <div id="message">
+          <h3>Password must contain the following:</h3>
+          <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+          <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+          <p id="number" class="invalid">A <b>number</b></p>
+          <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+        </div>
+                
+        <script>
+        var myInput = document.getElementById("psw");
+        var letter = document.getElementById("letter");
+        var capital = document.getElementById("capital");
+        var number = document.getElementById("number");
+        var length = document.getElementById("length");
+        
+
+        // When the user clicks on the password field, show the message box
+         myInput.onfocus = function() {
+        document.getElementById("message").style.display = "border-box";
+         }
+        // When the user clicks outside of the password field, hide the message box
+        myInput.onblur = function() {
+          
+m
+        }
+        
+        // When the user starts to type something inside the password field
+        myInput.onkeyup = function() {
+          // Validate lowercase letters
+          var lowerCaseLetters = /[a-z]/g;
+          if(myInput.value.match(lowerCaseLetters)) {  
+            letter.classList.remove("invalid");
+            letter.classList.add("valid");
+          } else {
+            letter.classList.remove("valid");
+            letter.classList.add("invalid");
+          }
+          
+          // Validate capital letters
+          var upperCaseLetters = /[A-Z]/g;
+          if(myInput.value.match(upperCaseLetters)) {  
+            capital.classList.remove("invalid");
+            capital.classList.add("valid");
+          } else {
+            capital.classList.remove("valid");
+            capital.classList.add("invalid");
+          }
+        
+          // Validate numbers
+          var numbers = /[0-9]/g;
+          if(myInput.value.match(numbers)) {  
+            number.classList.remove("invalid");
+            number.classList.add("valid");
+          } else {
+            number.classList.remove("valid");
+            number.classList.add("invalid");
+          }
+          
+          // Validate length
+          if(myInput.value.length >= 8) {
+            length.classList.remove("invalid");
+            length.classList.add("valid");
+          } else {
+            length.classList.remove("valid");
+            length.classList.add("invalid");
+          }
+        }
+        </script>
+        
+        </body>
+        </html>
+        
+        </form>
+      </div>
+    </body>
+  </html>

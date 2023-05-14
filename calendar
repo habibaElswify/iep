@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Islamic Education program  calender</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="calender.css">
+        <script>
+            function 
+
+        </script>
+        
+    </head>
+
+    <body>
+        <div class = "current-date">
+        <h2 >
+            May 2023
+        </h2>
+        <h2>
+            Shawwal  1444
+        </h2>
+    </div>
+        <br/>
+        <table bgcolor="lightgrey" align="center" 
+        cellspacing="15" cellpadding="15">
+        <thead>
+            <div class = "days">
+                <tr style="background-color: blanchedalmond;">
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>SaT</th>
+                </tr>
+            </div>
+           
+        </thead>
+        <div class = "weeks">
+            <tbody>
+                <div class = "week1">
+                    <tr>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        </tr>
+                        <td></td>
+                </div>
+                
+                <div class = "week2">
+                    <tr>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                    </tr>
+                    <td></td>
+                </div>
+               <div class ="week3">
+                <tr>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                </tr>
+                <td></td>
+               </div>
+               <div class ="week4">
+                <tr>
+                    <td>21</td>
+                    <td>22</td>
+                    <td>23</td>
+                    <td>24</td>
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                </tr>
+                <td></td>
+               </div>
+               <div class ="week5">
+    <tr>
+                    <td>28</td>
+                    <td>29</td>
+                    <td>30</td>
+                    <td>31</td>
+                </tr>
+               </div>
+        </div>
+        </table>
+        
+    </body>
+
+</html>
+
+
+//below css
+
+h2{
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(87, 169, 87);
+}
+
+table{
+    background-color: aliceblue;
+    align:center;
+}
+td:hover{
+    background-color: #009688;
+    color: #fff !important;
+    font-weight: 700;
+}
+.back {
+    height: 100%;
+   
+  }
+  
+  .back input {
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(73, 114, 133, .6);
+    color: #dfebed;
+    font-size: 1.4em;
+    font-weight: 300;
+    padding: 30px 40px;
+    width: 100%;
+  }

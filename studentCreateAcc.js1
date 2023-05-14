@@ -1,0 +1,10 @@
+function studentCreateAcc(){
+    let Age = document.getElementById('age').value
+    
+    if(age <= 13 ){
+        alert('You require a legal Guardians phone number, please enter it in the following step');
+    }
+    else{
+        alert('input your own phone number for the following quesion.');
+    }
+}

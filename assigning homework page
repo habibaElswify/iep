@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Homework Assignment</title>
+    <link rel="stylesheet" href="ClassWork.css">
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60vh;
+        }
+
+        .form-container {
+            border: 3px solid black;
+            padding: 20px;
+            width: 600px;
+        }
+        .log {
+            border: 3px solid black;
+            padding: 20px;
+            width: 1050px;
+        }
+        .popup-tab {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            display: none;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var form = document.getElementById('assignment-form');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                var students = Array.from(document.getElementById('students').selectedOptions).map(option => option.text);
+                showPopup(students);
+                logAssignment(students);
+            });
+        });
+
+        function showPopup(students) {
+            var popupTab = document.createElement('div');
+            popupTab.classList.add('popup-tab');
+
+            var message = document.createElement('p');
+            message.textContent = 'Homework assigned to the following students:';
+
+            var studentList = document.createElement('ul');
+            students.forEach(function(student) {
+                var listItem = document.createElement('li');
+                listItem.textContent = student;
+                studentList.appendChild(listItem);
+            });
+
+            popupTab.appendChild(message);
+            popupTab.appendChild(studentList);
+            document.body.appendChild(popupTab);
+
+            popupTab.style.display = 'block';
+
+            // Close the popup after 3 seconds
+            setTimeout(function() {
+                document.body.removeChild(popupTab);
+            }, 2000);
+        }
+
+        function logAssignment(students) {
+            var log = document.getElementById('assignment-log');
+            var listItem = document.createElement('li');
+            listItem.textContent = 'Homework assigned to: ' + students.join(', ');
+            log.appendChild(listItem);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>Homework Assignment</h1>
+
+            <form id="assignment-form">
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required><br>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="2" required></textarea><br>
+
+                <label for="students">Students:</label>
+                <select id="students" name="students" style="width:75px;" multiple required>
+                    <option value="student1">Student 1</option>
+                    <option value="student2">Student 2</option>
+                    <option value="student3">Student 3</option>
+                    <option value="student3">Student 4</option>
+                    <option value="student3">Student 5</option>
+                    <option value="student3">Student 6</option>
+                    <option value="student3">Student 7</option>
+                </select><br>
+
+                <input type="submit" value="Assign Homework">
+            </form>
+        </div>
+    </div>
+    <form class ="log">  <h2>Assignment Log:</h2>
+        <ul id="assignment-log"></ul></form>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+// This is the code for CSS
+
+
+.container{
+    text-align: center;
+    margin: 40px;
+}
+h2{
+    margin: 25px;
+}

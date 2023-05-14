@@ -1,0 +1,36 @@
+.teacherStudent {
+    display: flex;
+    justify-content: space-between;
+    background-color: lavender;
+    align-items: center;
+}
+body {
+    background-color: lavender;
+    
+}
+button {
+    
+    background-color: yellow;
+    
+}
+    h1{
+    text-align: center;
+}
+.FAQ-border{
+    margin: 0.44px;
+}
+.FAQ1-border{
+    margin: 0.39px;
+}
+.FAQ2-border{
+    margin: 0.4px;
+}
+h2{
+    text-align: center;
+}
+h4{
+    text-align: center;
+}
+form{
+    text-align: center;
+}
